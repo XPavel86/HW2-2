@@ -18,42 +18,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KhI-o4-d2x" userLabel="ViewRed">
-                                <rect key="frame" x="145" y="110" width="140" height="140"/>
+                                <rect key="frame" x="111" y="65" width="208" height="182"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEO-IV-mAd" userLabel="ViewGreen">
-                                <rect key="frame" x="145" y="454" width="140" height="140"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v0-zc-68e">
+                                <rect key="frame" x="174" y="821" width="83" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAX-UL-mYL" userLabel="ViewYellow">
-                                <rect key="frame" x="145" y="283" width="140" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v0-zc-68e">
-                                <rect key="frame" x="140" y="771" width="150" height="46"/>
                                 <color key="backgroundColor" name="AccentColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="z8m-J6-pK8"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="changeСolorDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bo8-C7-Be1"/>
+                                    <action selector="changeСolorButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJf-2a-YIT"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAX-UL-mYL" userLabel="ViewYellow">
+                                <rect key="frame" x="111" y="538" width="208" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEO-IV-mAd" userLabel="ViewGreen">
+                                <rect key="frame" x="111" y="285" width="208" height="199"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="9v0-zc-68e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K2Z-Dp-LFg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9v0-zc-68e" secondAttribute="bottom" constant="81" id="dJA-oU-Lrp"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="changeСolorButton" destination="9v0-zc-68e" id="YEm-Ie-VW5"/>
