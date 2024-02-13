@@ -26,7 +26,7 @@ final class ViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews(){
-        
+       
         changeСolorButton.layer.cornerRadius = 10
         
         [redLight, greenLight, yellowLight].forEach( { item in
