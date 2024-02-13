@@ -7,33 +7,35 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+final class ViewController: UIViewController {
+    // использование private выдает ошибку
     @IBOutlet var redLight: UIView!
     @IBOutlet var greenLight: UIView!
     @IBOutlet var yellowLight: UIView!
     
     @IBOutlet var changeСolorButton: UIButton!
     
-
+    var pressCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        [redLight, greenLight, yellowLight].forEach( { item in
+            item.alpha = 0.3
+        } )
+    }
+    
+    override func viewWillLayoutSubviews(){
         
         changeСolorButton.layer.cornerRadius = 10
         
         [redLight, greenLight, yellowLight].forEach( { item in
-            item.alpha = 0.3
             item.layer.cornerRadius = item.layer.frame.width / 2.0
         } )
     }
     
-    var pressCount = 0
-    // вылетает ошибка: changeСolorButtonDidTapped(changeСolorButton)
+    // вылетает ошибка changeСolorButtonDidTapped(changeСolorButton)
     @IBAction func changeСolorButtonDidTapped(_ sender: UIButton) {
-        
-        sender.setTitle("NEXT", for: .normal)
-        
-        pressCount += 1
         
         let trafficLights: (_, _, _) -> () = {
             self.redLight.alpha = $0
@@ -41,20 +43,25 @@ class ViewController: UIViewController {
             self.greenLight.alpha = $2
         }
         
+        sender.setTitle("NEXT", for: .normal)
+        
+        pressCount += 1
+        //print(pressCount)
         switch pressCount {
         case 1: trafficLights(1, 0.3, 0.3)
+            //print("red")
         case 2: trafficLights(0.3, 1, 0.3)
+            //print("yellow")
         case 3: trafficLights(0.3, 0.3, 1)
-
+            //print("green")
         default:
             pressCount = 0
             trafficLights(0.3, 0.3, 0.3)
             sender.setTitle("START", for: .normal)
+            //print("=========")
         }
-        
     }
-    
-    }
-    
+}
+
 
 
