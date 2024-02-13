@@ -3,7 +3,7 @@
 //  HW2-2
 //
 //  Created by Pavel Dolgopolov on 12.02.2024.
-//
+// На реальном устройстве кружки сильно изменились в размерах, не так как в storyboard 
 
 import UIKit
 
@@ -26,7 +26,7 @@ final class ViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews(){
-       
+        
         changeСolorButton.layer.cornerRadius = 10
         
         [redLight, greenLight, yellowLight].forEach( { item in
@@ -46,19 +46,15 @@ final class ViewController: UIViewController {
         sender.setTitle("NEXT", for: .normal)
         
         pressCount += 1
-        //print(pressCount)
         switch pressCount {
         case 1: trafficLights(1, 0.3, 0.3)
-            //print("red")
         case 2: trafficLights(0.3, 1, 0.3)
-            //print("yellow")
         case 3: trafficLights(0.3, 0.3, 1)
-            //print("green")
+ 
         default:
             pressCount = 0
             trafficLights(0.3, 0.3, 0.3)
             sender.setTitle("START", for: .normal)
-            //print("=========")
         }
     }
 }
