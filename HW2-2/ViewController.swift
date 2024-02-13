@@ -1,9 +1,8 @@
 //
 //  ViewController.swift
 //  HW2-2
-//
 //  Created by Pavel Dolgopolov on 12.02.2024.
-// На реальном устройстве кружки сильно изменились в размерах, не так как в storyboard 
+//
 
 import UIKit
 
@@ -15,7 +14,7 @@ final class ViewController: UIViewController {
     
     @IBOutlet var changeСolorButton: UIButton!
     
-    var pressCount = 0
+    private var pressCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +33,7 @@ final class ViewController: UIViewController {
         } )
     }
     
-    // вылетает ошибка changeСolorButtonDidTapped(changeСolorButton)
+    // вылетает ошибка в таком варианте > changeСolorButtonDidTapped(changeСolorButton)
     @IBAction func changeСolorButtonDidTapped(_ sender: UIButton) {
         
         let trafficLights: (_, _, _) -> () = {
