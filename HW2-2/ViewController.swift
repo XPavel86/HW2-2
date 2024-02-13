@@ -25,11 +25,9 @@ class ViewController: UIViewController {
             item.alpha = 0.3
             item.layer.cornerRadius = item.layer.frame.width / 2.0
         } )
-        
     }
     
     var pressCount = 0
-    
     // вылетает ошибка: changeСolorButtonDidTapped(changeСolorButton)
     @IBAction func changeСolorButtonDidTapped(_ sender: UIButton) {
         
