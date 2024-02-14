@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  HW2-2
 //  Created by Pavel Dolgopolov on 12.02.2024.
-//
+// 
 
 import UIKit
 
