@@ -12,24 +12,22 @@ final class ViewController: UIViewController {
     @IBOutlet var greenLight: UIView!
     @IBOutlet var yellowLight: UIView!
     
-    @IBOutlet var changeСolorButton: UIButton!
-    
-    private var pressCount = 0
+    @IBOutlet var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        [redLight, greenLight, yellowLight].forEach( { item in
-            item.alpha = 0.3
+        [redLight, greenLight, yellowLight].forEach( {
+            item in item.alpha = 0.3
         } )
     }
     
-    override func viewWillLayoutSubviews(){
+    override func viewWillLayoutSubviews() {
         
-        changeСolorButton.layer.cornerRadius = 10
+        startButton.layer.cornerRadius = 10
         
-        [redLight, greenLight, yellowLight].forEach( { item in
-            item.layer.cornerRadius = item.layer.frame.width / 2.0
+        [redLight, greenLight, yellowLight].forEach( {
+            item in item.layer.cornerRadius = item.layer.frame.width / 2.0
         } )
     }
     
@@ -42,18 +40,18 @@ final class ViewController: UIViewController {
             self.greenLight.alpha = $2
         }
         
-        sender.setTitle("NEXT", for: .normal)
+        if sender.titleLabel?.text != "NEXT"  {
+            sender.setTitle("NEXT", for: .normal)
+        }
         
-        pressCount += 1
-        switch pressCount {
-        case 1: trafficLights(1, 0.3, 0.3)
-        case 2: trafficLights(0.3, 1, 0.3)
-        case 3: trafficLights(0.3, 0.3, 1)
- 
-        default:
-            pressCount = 0
-            trafficLights(0.3, 0.3, 0.3)
-            sender.setTitle("START", for: .normal)
+        startButton.tag  += 1
+        
+        switch startButton.tag {
+            case 1: trafficLights(1, 0.3, 0.3)
+            case 2: trafficLights(0.3, 1, 0.3)
+            default:
+                trafficLights(0.3, 0.3, 1)
+                startButton.tag = 0
         }
     }
 }
